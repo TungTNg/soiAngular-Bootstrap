@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Schedule of Investments</h1>
+    <p class="lead">This project was created using Angular 7 & Boostrap 4.</p>
+    <hr class="my-4">
+    <p>Below are some methods that your can filter the data. Either enter the criteria or pick a criteria for the filter to be applied.
+    <br>You can also click to expand/collapse either one or all Invesment(s).
+    </p>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text bg-primary text-white mr-2">Filter By Investment's Name</span>
+      </div>
+      <input type="text" class="form-control" placeholder="Investment Name" #txtInvestment [(ngModel)]='name' ng-trim='false' />
+    </div>
+    
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text bg-primary text-white mr-2">Filter By Asset's Name</span>
+      </div>
+      <input type="text" class="form-control" placeholder="Asset Name" #txtAsset [(ngModel)]='asset_class' ng-trim='false' />
+    </div>
+
+    <!--<div class="input-group mb-3">-->
+    <!--  <div class="input-group-prepend">-->
+    <!--    <span class="input-group-text bg-primary text-white mr-2">Filter By Investment's Date</span>-->
+    <!--  </div>-->
+    <!--  <input type="date" class="form-control" placeholder="Investment Date" #Date [(ngModel)]='investment_date' ng-trim='false' />-->
+    <!--</div>-->
+    
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text bg-info text-white mr-2">Choose Another Date to Reload Data</span>
+      </div>
+      <input type="date" class="form-control" placeholder="Investment Date" #Date [(ngModel)]='data_date' (ngModelChange)='reLoadData($event)' ng-trim='false' />
+    </div>
+    
+  </div>
+  
+  <table class="table" *ngIf="soiData">
+    <thead>
+      <tr>
+        <th>
+          <!--<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".allInvestment">-->
+            Investment  
+            <a onclick="collapse()" href = "#" class="ml-2">
+              <i class="far fa-minus-square"></i>
+            </a>
+            <a onclick="expand()" href = "#" class="ml-2">
+              <i class="far fa-plus-square"></i>
+            </a>
+          <!--</button>-->
+        </th>
+        <th>Asset</th>
+        <th>Investment Date</th>
+        <th>Shares</th> 
+        <th>Cost</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let soi of soiData | filter: 'name' : txtInvestment.value | assetFilter: 'asset_class' : txtAsset.value" class="collapse show multi-collapse">
+      <tr class="bg-light">
+        <td>
+          <button class="btn btn-outline-primary" type="button" data-toggle="collapse" [attr.data-target]="'.' + 'class_' + soi.id">
+            {{ soi.name }}
+          </button>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>{{ soi.quantity | currency }}</td>
+        <td>{{ soi.cost.$ | currency }}</td>
+      </tr>
+      <tr *ngFor="let anotherSoi of soi.issued_assets | filter: 'asset_class' : txtAsset.value" [attr.class]="'class_' + soi.id + ' allInvestment multi-collapse collapse show'">
+        <td></td>
+        <td> {{ anotherSoi.asset_class }} </td>
+        <td> {{ anotherSoi.investment_date }} </td>
+        <td> {{ anotherSoi.quantity | currency }}</td>
+        <td> {{ anotherSoi.cost.$ | currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+</div>
