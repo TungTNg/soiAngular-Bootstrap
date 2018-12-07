@@ -20,6 +20,9 @@ export class SoiDataService {
       console.log(`https://gist.githubusercontent.com/cranium/d8b83184bf0750f2c834760b7c9203dc/raw/a73a70716951f77b90e84b8848ff1fee46938dd1/soi.json`, { params: params })
       
       return this.http.get(`https://gist.githubusercontent.com/cranium/d8b83184bf0750f2c834760b7c9203dc/raw/a73a70716951f77b90e84b8848ff1fee46938dd1/soi.json`, { params: params })
+      
+      // Test if date is chosen => return another different valid json data table
+      // return this.http.get('https://api.myjson.com/bins/7nzwu')
     }
     
   }

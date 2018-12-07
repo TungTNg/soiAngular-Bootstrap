@@ -19,13 +19,6 @@
       </div>
       <input type="text" class="form-control" placeholder="Asset Name" #txtAsset [(ngModel)]='asset_class' ng-trim='false' />
     </div>
-
-    <!--<div class="input-group mb-3">-->
-    <!--  <div class="input-group-prepend">-->
-    <!--    <span class="input-group-text bg-primary text-white mr-2">Filter By Investment's Date</span>-->
-    <!--  </div>-->
-    <!--  <input type="date" class="form-control" placeholder="Investment Date" #Date [(ngModel)]='investment_date' ng-trim='false' />-->
-    <!--</div>-->
     
     <div class="input-group mb-3">
       <div class="input-group-prepend">
@@ -40,7 +33,6 @@
     <thead>
       <tr>
         <th>
-          <!--<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".allInvestment">-->
             Investment  
             <a onclick="collapse()" href = "#" class="ml-2">
               <i class="far fa-minus-square"></i>
@@ -48,7 +40,6 @@
             <a onclick="expand()" href = "#" class="ml-2">
               <i class="far fa-plus-square"></i>
             </a>
-          <!--</button>-->
         </th>
         <th>Asset</th>
         <th>Investment Date</th>
