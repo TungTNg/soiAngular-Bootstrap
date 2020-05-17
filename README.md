@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0.
 
-Live demo: [https://tungthecoder.com/soiAngular-Bootstrap/dist/](https://tungthecoder.com/soiAngular-Bootstrap/dist/)
+Live demo: [https://tungthecoder.dev/soiAngular-Bootstrap/dist/](https://tungthecoder.dev/soiAngular-Bootstrap/dist/)
 
 ## A few points before we start...
 * I've implemented 2 filter methods: Filter by Invesment's Name/ Filter by Asset's Name. You can apply the filters seperately or together. I could implement more filter methods but due to time constraint I think those should be enough.
@@ -26,7 +26,7 @@ https://github.com/TungTNg/soiAngular-Bootstrap/blob/master/src/app/home/home.co
 
 ## Instruction
 
-You can either visit my live demo at: [https://tungthecoder.com/soiAngular-Bootstrap/dist/](https://tungthecoder.com/soiAngular-Bootstrap/dist/), or recreate the whole project using below guide.
+You can either visit my live demo at: [https://tungthecoder.dev/soiAngular-Bootstrap/dist/](https://tungthecoder.dev/soiAngular-Bootstrap/dist/), or recreate the whole project using below guide.
 
 ##### Note:
 Under the project root folder, inside index.html, please change _base href="/app/"_ to _base href="/"_ if you decide to recreate the whole project.
